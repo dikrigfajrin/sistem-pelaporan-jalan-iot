@@ -254,7 +254,6 @@ try {
                             <label for="filterWilayah" class="fw-bold me-2 text-secondary text-nowrap">Fokus Peta:</label>
                             <select id="filterWilayah" class="form-select" onchange="pindahLokasi()">
                                 <option value="auto" selected>🎯 Otomatis (Semua Titik)</option>
-                                <option value="indonesia">🌍 Seluruh Indonesia</option>
                                 <option value="jabar">🗺️ Provinsi Jawa Barat</option>
                                 <option value="kab_bogor">📍 Kabupaten Bogor</option>
                                 <option value="kota_bogor">🏙️ Kota Bogor</option>
@@ -465,8 +464,6 @@ try {
                 const bounds = new google.maps.LatLngBounds();
                 semuaMarker.forEach(m => bounds.extend(m.getPosition()));
                 if (semuaMarker.length > 0) map.fitBounds(bounds);
-            } else if (wilayah === "indonesia") {
-                map.panTo({ lat: -0.7893, lng: 113.9213 }); map.setZoom(5);
             } else if (wilayah === "jabar") {
                 map.panTo({ lat: -6.9147, lng: 107.6098 }); map.setZoom(8);
             } else if (wilayah === "kab_bogor") {
